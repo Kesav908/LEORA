@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Leora Creative Agency — We create brands people remember and marketing creatives that people can't ignore. Brand design, websites, AI video production, and more." />
+  <meta name="keywords" content="creative agency, brand design, website design, AI video production, UGC content, motion graphics, Leora" />
+  <meta property="og:title" content="Leora — Design That Turns Attention Into Revenue" />
+  <meta property="og:description" content="We create brands people remember and marketing creatives that people can't ignore." />
+  <title>Leora — Design That Turns Attention Into Revenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo" aria-label="Leora home">
+        <img src="Leora.png" alt="Leora lion logo" class="logo-img" />
+        <span class="logo-text">Leora</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
+        <li><a href="#proof" class="nav-link" id="nav-proof">Proof</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-sm nav-cta" id="nav-cta-btn" data-open-chat>Let's Talk →</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+      <ul role="list">
+        <li><a href="#services" id="mob-services">Services</a></li>
+        <li><a href="#proof" id="mob-proof">Proof</a></li>
+        <li><a href="#contact" id="mob-contact">Contact</a></li>
+        <li><a href="#" class="btn btn-primary" id="mob-cta" data-open-chat>Let's Talk →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero" aria-label="Hero section">
+    <div class="hero-bg">
+      <!-- <img src="hero-bg.png" alt="" role="presentation" /> -->
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="container hero-container">
+      <!-- Left content -->
+      <div class="hero-content" data-animate="fade-up">
+        <div class="badge" id="hero-badge">
+          <span class="badge-dot"></span>
+          Creative Growth Engine
+        </div>
+        <h1 class="hero-headline">
+          Design That Turns<br />
+          <span class="hero-headline-em">Attention</span><br />
+          Into Revenue.
+        </h1>
+        <p class="hero-lead">We create brands people remember and marketing creatives that people can't ignore.</p>
+        <p class="hero-body">From bold brand identities to high-converting ad creatives, websites, AI powered commercials, and social content. Leora helps businesses launch faster, grow smarter, and stand out in every scroll.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary" id="hero-cta-primary" data-open-chat>Let's Build Your Brand →</a>
+          <a href="#services" class="btn btn-ghost" id="hero-cta-secondary">Explore services</a>
+        </div>
+      </div>
+      <!-- Right dashboard widget -->
+      <div class="hero-visual" data-animate="fade-left">
+        <div class="hero-card hero-card-stats">
+          <div class="stat-label">ATTENTION → REVENUE</div>
+          <div class="stat-number">1,000<span class="accent">+</span></div>
+          <p class="stat-desc">Creatives delivered across brands, campaigns, launches, and product stories.</p>
+          <div class="avatar-row">
+            <div class="avatar av1"></div>
+            <div class="avatar av2"></div>
+            <div class="avatar av3"></div>
+            <div class="avatar av4"></div>
+            <div class="avatar av5"></div>
+            <div class="avatar av6"></div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-image">
+          <img src="ai-commercial.png" alt="AI TV Commercial production" class="hero-img-commercial" />
+          <div class="hero-card-tag">AI TV COMMERCIAL</div>
+          <div class="play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="hero-card hero-card-thumb">
+          <img src="website-design.png" alt="Website design example" />
+        </div>
+        <!-- Decorative glow -->
+        <div class="hero-glow"></div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap" aria-label="Services ticker">
+      <div class="ticker-track" id="ticker-track">
+        <span>Logo Design</span><span class="accent-dot">·</span>
+        <span>Brand Identity</span><span class="accent-dot">·</span>
+        <span class="accent-text">Ad Creatives</span><span class="accent-dot">·</span>
+        <span>Website Design</span><span class="accent-dot">·</span>
+        <span class="accent-text">AI Video Ads</span><span class="accent-dot">·</span>
+        <span>UGC Video Ads</span><span class="accent-dot">·</span>
+        <span>Motion Graphics</span><span class="accent-dot">·</span>
+        <!-- Duplicate for seamless loop -->
+        <span>Logo Design</span><span class="accent-dot">·</span>
+        <span>Brand Identity</span><span class="accent-dot">·</span>
+        <span class="accent-text">Ad Creatives</span><span class="accent-dot">·</span>
+        <span>Website Design</span><span class="accent-dot">·</span>
+        <span class="accent-text">AI Video Ads</span><span class="accent-dot">·</span>
+        <span>UGC Video Ads</span><span class="accent-dot">·</span>
+        <span>Motion Graphics</span><span class="accent-dot">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="services" aria-label="Services">
+    <div class="container">
+      <div class="services-header" data-animate="fade-up">
+        <div class="section-tag">SERVICES</div>
+        <div class="services-header-grid">
+          <h2 class="section-headline">
+            Everything Your Brand Needs.<br />
+            <em>One Creative Partner.</em>
+          </h2>
+          <p class="services-desc">Whether you're launching a startup, scaling an ecommerce brand, or running campaigns for thousands of customers, our team delivers creative work that drives real business results.</p>
+        </div>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <!-- Card 1 -->
+        <div class="service-card" id="svc-brand" data-animate="fade-up" data-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="service-title">Brand Design</h3>
+          <p class="service-text">Logos, identities, guidelines, packaging.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card" id="svc-creative" data-animate="fade-up" data-delay="80">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="service-title">Creative Design</h3>
+          <p class="service-text">Social creatives, Meta, Google and LinkedIn ads, brochures, and presentations.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card" id="svc-web" data-animate="fade-up" data-delay="160">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <h3 class="service-title">Website Design</h3>
+          <p class="service-text">Modern websites, landing pages, UI/UX systems, and conversion-focused digital experiences.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card" id="svc-video" data-animate="fade-up" data-delay="240">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="15" height="10" rx="2"/><path d="M17 9l5-2v10l-5-2"/></svg>
+          </div>
+          <h3 class="service-title">AI Video Production</h3>
+          <p class="service-text">AI commercials, product videos, explainers, and visual stories built for scroll-stopping campaigns.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="service-card" id="svc-ugc" data-animate="fade-up" data-delay="320">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="service-title">UGC Content</h3>
+          <p class="service-text">Authentic creator-style videos that help your audience trust, click, and convert.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="service-card" id="svc-demand" data-animate="fade-up" data-delay="400">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="service-title">Creative on Demand</h3>
+          <p class="service-text">Your extended creative team for launch assets, campaign design, motion, print, packaging, and events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISUAL SYSTEMS ===== -->
+  <section id="visual-systems" class="visual-systems" aria-label="Visual Systems">
+    <div class="container">
+      <div class="vs-header" data-animate="fade-up">
+        <div class="section-tag">VISUAL SYSTEMS</div>
+        <div class="vs-header-grid">
+          <h2 class="section-headline">
+            Images, videos, and campaign assets<br />
+            built to <em>stop the scroll.</em>
+          </h2>
+          <p class="vs-desc">From launch visuals to cinematic AI commercials, every asset is shaped to feel premium, move fast, and sell clearly.</p>
+        </div>
+      </div>
+
+      <div class="vs-grid" id="vs-grid">
+        <!-- Large card -->
+        <div class="vs-card vs-card-large" id="vs-ai-commercial" data-animate="fade-up" data-delay="0">
+          <img src="Pic1.jpeg" alt="Featured work sample one" />
+          <div class="vs-card-tag">
+            <span class="vs-dot"></span> FEATURED WORK
+          </div>
+          <div class="vs-card-overlay">
+            <p>Brand visuals and campaign assets designed to stand out.</p>
+            <div class="vs-underline"></div>
+          </div>
+        </div>
+
+        <!-- Small card right -->
+        <div class="vs-card vs-card-sm" id="vs-website" data-animate="fade-up" data-delay="100">
+          <img src="Pic2.jpeg" alt="Featured work sample two" />
+          <div class="vs-card-overlay">
+            <p>Creative direction and polished visuals for a high-impact launch.</p>
+          </div>
+        </div>
+
+        <!-- Bottom left -->
+        <div class="vs-card vs-card-sm" id="vs-social" data-animate="fade-up" data-delay="200">
+          <img src="Pic3.jpeg" alt="Featured work sample three" />
+          <div class="vs-card-overlay">
+            <p>Social-first creative built to capture attention and drive engagement.</p>
+          </div>
+        </div>
+
+        <!-- Bottom right -->
+        <div class="vs-card vs-card-sm vs-card-play" id="vs-motion" data-animate="fade-up" data-delay="300">
+          <img src="Pic1.jpeg" alt="Featured work sample one again" />
+          <div class="vs-card-overlay">
+            <p>Motion-ready visuals and campaign assets for digital growth.</p>
+            <span class="vs-sub">A closer look at the creative systems behind the work.</span>
+          </div>
+          <button class="vs-play-btn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="proof" class="testimonials" aria-label="Client testimonials">
+    <div class="container">
+      <div class="testimonials-header" data-animate="fade-up">
+        <div class="section-tag">TESTIMONIALS</div>
+        <h2 class="section-headline testimonials-hl">
+          Creative that looks premium<br />
+          and performs under pressure.
+        </h2>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+        <div class="testi-card" id="testi-1" data-animate="fade-up" data-delay="0">
+          <div class="quote-icon">"</div>
+          <p class="testi-text">Leora completely transformed our brand identity. From the logo to our website and ad creatives, every detail felt premium.</p>
+          <div class="testi-author">FOUNDER, D2C BRAND</div>
+        </div>
+        <div class="testi-card" id="testi-2" data-animate="fade-up" data-delay="100">
+          <div class="quote-icon">"</div>
+          <p class="testi-text">Finding one team that could handle design, websites, and AI videos saved us time and money.</p>
+          <div class="testi-author">MARKETING MANAGER, SAAS COMPANY</div>
+        </div>
+        <div class="testi-card" id="testi-3" data-animate="fade-up" data-delay="200">
+          <div class="quote-icon">"</div>
+          <p class="testi-text">Fast delivery, exceptional creativity, and zero compromises on quality.</p>
+          <div class="testi-author">CEO, STARTUP</div>
+        </div>
+        <div class="testi-card" id="testi-4" data-animate="fade-up" data-delay="300">
+          <div class="quote-icon">"</div>
+          <p class="testi-text">The AI commercial they created looked like something from a global brand campaign.</p>
+          <div class="testi-author">ECOMMERCE FOUNDER</div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row" id="stats-row">
+        <div class="stat-item" id="stat-brands" data-animate="fade-up" data-delay="0">
+          <div class="stat-val"><span class="counter" data-target="300">0</span>+</div>
+          <div class="stat-lbl">BRANDS TRUSTED</div>
+        </div>
+        <div class="stat-item" id="stat-creatives" data-animate="fade-up" data-delay="100">
+          <div class="stat-val"><span class="counter" data-target="5000">0</span>+</div>
+          <div class="stat-lbl">CREATIVES DELIVERED</div>
+        </div>
+        <div class="stat-item" id="stat-retention" data-animate="fade-up" data-delay="200">
+          <div class="stat-val"><span class="counter" data-target="98">0</span>%</div>
+          <div class="stat-lbl">CLIENT RETENTION</div>
+        </div>
+        <div class="stat-item" id="stat-delivery" data-animate="fade-up" data-delay="300">
+          <div class="stat-val">48-Hour</div>
+          <div class="stat-lbl">AVERAGE DELIVERY</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section id="contact" class="cta-section" aria-label="Call to action">
+    <div class="container">
+      <div class="cta-box" data-animate="fade-up">
+        <div class="section-tag">UNLIMITED CREATIVE POSSIBILITIES</div>
+        <h2 class="cta-headline">
+          Your Creative Team,<br />
+          Without Hiring One
+        </h2>
+        <p class="cta-body">Plug Leora into your brand and get strategy, design, web, motion, AI video, UGC, print, packaging, events, and presentation support from one creative partner.</p>
+        <a href="#" class="btn btn-primary btn-lg" id="cta-main-btn" data-open-chat>Let's Build Your Brand →</a>
+
+        <!-- CTA ticker -->
+        <div class="cta-ticker-wrap">
+          <div class="cta-ticker-track">
+            <span>Creative Strategy</span><span class="accent-dot">·</span>
+            <span class="accent-text">Marketing Design</span><span class="accent-dot">·</span>
+            <span>Print &amp; Packaging</span><span class="accent-dot">·</span>
+            <span>Event Branding</span><span class="accent-dot">·</span>
+            <span>Presentation Design</span><span class="accent-dot">·</span>
+            <span class="accent-text">Product Videos</span><span class="accent-dot">·</span>
+            <span>Creative Strategy</span><span class="accent-dot">·</span>
+            <span class="accent-text">Marketing Design</span><span class="accent-dot">·</span>
+            <span>Print &amp; Packaging</span><span class="accent-dot">·</span>
+            <span>Event Branding</span><span class="accent-dot">·</span>
+            <span>Presentation Design</span><span class="accent-dot">·</span>
+            <span class="accent-text">Product Videos</span><span class="accent-dot">·</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 Leora Creative Agency</p>
+      <p class="footer-links">Design <span class="accent-dot">•</span> Web <span class="accent-dot">•</span> AI Video <span class="accent-dot">•</span> Growth Creatives</p>
+    </div>
+  </footer>
+
+  <!-- ===== CHAT BOT ===== -->
+  <button class="chat-toggle" id="chat-toggle" type="button" aria-label="Open chat assistant" data-open-chat>
+    <span>💬</span>
+  </button>
+
+  <div class="chat-widget" id="chat-widget" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <p class="chat-eyebrow">LEO AI BOT</p>
+        <h3>Let's build your brand</h3>
+      </div>
+      <button class="chat-close" id="chat-close" type="button" aria-label="Close chat assistant">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Type your answer..." autocomplete="off" />
+      <button type="submit" class="btn btn-primary chat-submit">Send</button>
+    </form>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

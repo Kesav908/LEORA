@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leora — Contact Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="form-page">
+    <div class="container form-shell">
+      <a href="index.html" class="back-link">← Back to home</a>
+      <div class="contact-modal-dialog form-card" role="dialog" aria-labelledby="contact-modal-title">
+        <div class="contact-modal-header">
+          <div class="section-tag">START YOUR PROJECT</div>
+          <h3 id="contact-modal-title">Let's build your brand</h3>
+          <p>Share a few details and we’ll reach out with the next steps.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <label>
+              Your name
+              <input type="text" name="name" placeholder="Alex Morgan" required />
+            </label>
+            <label>
+              Email address
+              <input type="email" name="email" placeholder="you@company.com" required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              Company name
+              <input type="text" name="company" placeholder="Your company" required />
+            </label>
+            <label>
+              Contact number
+              <input type="tel" name="phone" placeholder="+1 234 567 890" required />
+            </label>
+          </div>
+          <label>
+            Project description
+            <textarea name="description" placeholder="Tell us about your goals, timeline, and what you want to create." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary contact-modal-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
