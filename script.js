@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+  function isValidPhone(phone) {
+    const cleaned = phone.replace(/[^0-9+]/g, '');
+    if (!cleaned) return false;
+    const normalized = cleaned.startsWith('+') ? cleaned.slice(1) : cleaned;
+    return normalized.length >= 8 && normalized.length <= 15;
+  }
+
   if (chatForm) {
     chatForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -75,6 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentPrompt?.key === 'email' && !isValidEmail(value)) {
         addMessage(value, 'user');
         addMessage('Please enter a valid email address so we can reach you.', 'bot');
+        chatForm.reset();
+        chatInput?.focus();
+        return;
+      }
+
+      if (currentPrompt?.key === 'phone' && !isValidPhone(value)) {
+        addMessage(value, 'user');
+        addMessage('Please enter a valid phone number so we can contact you.', 'bot');
         chatForm.reset();
         chatInput?.focus();
         return;
@@ -95,8 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await response.json();
           if (result.ok && result.sent) {
             addMessage('Thanks! Your inquiry has been sent directly to the team.', 'bot');
+          } else if (result.error) {
+            addMessage(`Thanks! Your inquiry could not be sent. ${result.error}`, 'bot');
           } else {
-            addMessage('Thanks! The chatbot captured your details, but the email delivery is not configured yet.', 'bot');
+            addMessage('Thanks! The chatbot captured your details, but the email delivery could not be completed.', 'bot');
           }
         } catch (error) {
           console.error(error);
@@ -165,6 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  /* ── Hero preview image ── */
+  const heroPreviewImage = document.querySelector('.hero-card-image .hero-theme-image');
+  if (heroPreviewImage) {
+    heroPreviewImage.src = 'Banner.png';
+    heroPreviewImage.alt = 'Leora website banner preview';
+  }
+
   /* ── Scroll-triggered animations ── */
   const animEls = document.querySelectorAll('[data-animate]');
   const io = new IntersectionObserver((entries) => {
@@ -233,17 +257,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   /* ── Visual Systems card parallax on scroll ── */
   function onScroll() {
-    const vsCards = document.querySelectorAll('.vs-card img');
-    vsCards.forEach(img => {
-      const rect = img.closest('.vs-card').getBoundingClientRect();
+    const vsCards = document.querySelectorAll('.vs-card img, .vs-card video');
+    vsCards.forEach(media => {
+      const rect = media.closest('.vs-card').getBoundingClientRect();
       const center = rect.top + rect.height / 2;
       const vh = window.innerHeight / 2;
       const diff = (center - vh) / vh;
-      img.style.transform = `scale(1.08) translateY(${diff * 14}px)`;
+      media.style.transform = `scale(1.08) translateY(${diff * 14}px)`;
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  /* ── Play button ripple ── */
+  /* ── Play button ripple and video modal ── */
+  const videoModal = document.getElementById('video-modal');
+  const videoModalPlayer = document.getElementById('video-modal-player');
+  const videoModalTitle = document.getElementById('video-modal-title');
+  const videoModalClose = document.getElementById('video-modal-close');
+  const videoModalBackdrop = document.querySelector('.video-modal-backdrop');
+
+  function openVideoModal(button) {
+    if (!videoModal || !videoModalPlayer) return;
+    const videoSrc = button?.dataset.videoSrc || 'Vid01.mp4';
+    const videoTitle = button?.dataset.videoTitle || 'Leora showcase video';
+    const videoPoster = button?.dataset.videoPoster || 'Pic1.jpeg';
+
+    videoModalPlayer.src = videoSrc;
+    videoModalPlayer.poster = videoPoster;
+    videoModalPlayer.load();
+    if (videoModalTitle) videoModalTitle.textContent = videoTitle;
+
+    videoModal.classList.add('open');
+    videoModal.setAttribute('aria-hidden', 'false');
+    videoModalPlayer.muted = false;
+    videoModalPlayer.currentTime = 0;
+    videoModalPlayer.play().catch(() => {});
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoModalPlayer) return;
+    videoModal.classList.remove('open');
+    videoModal.setAttribute('aria-hidden', 'true');
+    videoModalPlayer.pause();
+    videoModalPlayer.currentTime = 0;
+  }
+
   document.querySelectorAll('.play-btn, .vs-play-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const ripple = document.createElement('span');
@@ -262,7 +318,19 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.position = 'relative';
       btn.appendChild(ripple);
       setTimeout(() => ripple.remove(), 700);
+
+      if (btn.hasAttribute('data-open-video-modal')) {
+        openVideoModal(btn);
+      }
     });
+  });
+
+  videoModalClose?.addEventListener('click', closeVideoModal);
+  videoModalBackdrop?.addEventListener('click', closeVideoModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('open')) {
+      closeVideoModal();
+    }
   });
   /* ── Ticker pause on hover ── */
   const tickerTracks = document.querySelectorAll('.ticker-track, .cta-ticker-track');

@@ -83,15 +83,9 @@
             <div class="avatar av6"></div>
           </div>
         </div>
-        <div class="hero-card hero-card-image">
-          <img src="ai-commercial.png" alt="AI TV Commercial production" class="hero-img-commercial" />
-          <div class="hero-card-tag">AI TV COMMERCIAL</div>
-          <div class="play-btn" aria-label="Play video">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="hero-card hero-card-thumb">
-          <img src="website-design.png" alt="Website design example" />
+        <div class="hero-card hero-card-stats" data-theme-card>
+          <img src="Banner.png" alt="Leora website banner preview" class="hero-theme-image" />
+          <div class="hero-card-tag">THEME PREVIEW</div>
         </div>
         <!-- Decorative glow -->
         <div class="hero-glow"></div>
@@ -223,21 +217,30 @@
         </div>
 
         <!-- Bottom left -->
-        <div class="vs-card vs-card-sm" id="vs-social" data-animate="fade-up" data-delay="200">
-          <img src="Pic3.jpeg" alt="Featured work sample three" />
+        <div class="vs-card vs-card-sm vs-card-play" id="vs-social" data-animate="fade-up" data-delay="200">
+          <video src="Vid02.mp4" muted playsinline preload="metadata"  aria-label="Featured work video sample two" poster="Thar banner.png"></video>
+          <div class="vs-card-tag">
+            <span class="vs-dot"></span> VIDEO 01
+          </div>
           <div class="vs-card-overlay">
             <p>Social-first creative built to capture attention and drive engagement.</p>
           </div>
+          <button class="vs-play-btn" aria-label="Play video" type="button" data-open-video-modal data-video-src="Vid02.mp4" data-video-title="Leora showcase video " data-video-poster="Pic3.jpeg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
         </div>
 
         <!-- Bottom right -->
         <div class="vs-card vs-card-sm vs-card-play" id="vs-motion" data-animate="fade-up" data-delay="300">
-          <img src="Pic1.jpeg" alt="Featured work sample one again" />
+          <video src="Vid01.mp4" muted playsinline preload="metadata"  aria-label="Featured work video sample"></video>
+          <div class="vs-card-tag">
+            <span class="vs-dot"></span> VIDEO 02
+          </div>
           <div class="vs-card-overlay">
             <p>Motion-ready visuals and campaign assets for digital growth.</p>
             <span class="vs-sub">A closer look at the creative systems behind the work.</span>
           </div>
-          <button class="vs-play-btn" aria-label="Play video">
+          <button class="vs-play-btn" aria-label="Play video" type="button" data-open-video-modal data-video-src="Vid01.mp4" data-video-title="Leora showcase video" data-video-poster="Pic1.jpeg">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </button>
         </div>
@@ -341,6 +344,20 @@
       <p class="footer-links">Design <span class="accent-dot">•</span> Web <span class="accent-dot">•</span> AI Video <span class="accent-dot">•</span> Growth Creatives</p>
     </div>
   </footer>
+
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-close-video-modal></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+      <button class="video-modal-close" id="video-modal-close" type="button" aria-label="Close video">×</button>
+      <div class="video-modal-header">
+        <p class="video-modal-eyebrow">FEATURED WORK</p>
+        <h3 id="video-modal-title">Leora showcase video</h3>
+      </div>
+      <div class="video-modal-player">
+        <video id="video-modal-player" controls playsinline preload="metadata" poster="Pic1.jpeg"></video>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== CHAT BOT ===== -->
   <button class="chat-toggle" id="chat-toggle" type="button" aria-label="Open chat assistant" data-open-chat>
